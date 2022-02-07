@@ -1,5 +1,9 @@
-test_str = "Mississippi"
-res = {}
-for keys in test_str:
-	res[keys] = res.get(keys, 0) + 1
-print ("Count of all characters in Mississippi is : \n" + str(res))
+import operator
+if __name__ == '__main__':
+    test_string = 'Missisippi'
+    string_dict = dict()
+    for letter in test_string:
+        if letter not in string_dict:
+            string_dict[letter] = test_string.count(letter)
+    ordered_answer = sorted(string_dict.items(), key=operator.itemgetter(1), reverse=True)
+    print (ordered_answer)
